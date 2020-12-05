@@ -36,6 +36,7 @@ namespace Music_Player.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerView));
             this.backgroundimg = new System.Windows.Forms.PictureBox();
             this.stitle = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundimg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@ namespace Music_Player.Forms
             // 
             this.backgroundimg.Location = new System.Drawing.Point(-1, 0);
             this.backgroundimg.Name = "backgroundimg";
-            this.backgroundimg.Size = new System.Drawing.Size(665, 326);
+            this.backgroundimg.Size = new System.Drawing.Size(665, 296);
             this.backgroundimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backgroundimg.TabIndex = 0;
             this.backgroundimg.TabStop = false;
@@ -57,10 +58,22 @@ namespace Music_Player.Forms
             this.stitle.Size = new System.Drawing.Size(0, 51);
             this.stitle.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.Location = new System.Drawing.Point(55, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 29);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Play/Pause\r\n";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.pausePlayer);
+            // 
             // PlayerView
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(665, 324);
+            this.ClientSize = new System.Drawing.Size(665, 343);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.stitle);
             this.Controls.Add(this.backgroundimg);
             this.ForeColor = System.Drawing.Color.White;
@@ -79,5 +92,6 @@ namespace Music_Player.Forms
 
         private System.Windows.Forms.PictureBox backgroundimg;
         private System.Windows.Forms.Label stitle;
+        private System.Windows.Forms.Button button1;
     }
 }

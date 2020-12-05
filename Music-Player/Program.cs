@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Music_Player.Forms;
+using Music_Player.Setup;
+using System.IO;
 
 namespace Music_Player
 {
@@ -17,12 +19,32 @@ namespace Music_Player
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (args.Length > 0)
+            var __path = Path.GetDirectoryName(Application.ExecutablePath);
+            if (((args.Length > 0) && args[0] != "force" ) && System.Diagnostics.Process.GetProcessesByName(System.Diagnostics.Process.GetCurrentProcess().ProcessName).Length > 1)
             {
-                if(args[0] != null)
+                MessageBox.Show("Another instance of this app is already running please close it to start this");
+                Application.Exit();
+                return;
+            }
+            var ffmpegExists = File.Exists($@"{__path}/ffmpeg/ffmpeg-n4.3.1-26-gca55240b8c-win64-gpl-shared-4.3/bin/ffmpeg.exe");
+            if (!ffmpegExists)
+            {
+                Application.Run(new SetupManager());
+            }
+            else if(args.Length > 0)
+            {
+                if(args[0] != null && args[0] != "force")
                 {
-                   PlayerView spawnPlayer = new PlayerView(args[0]);
-                   Application.Run(spawnPlayer);
+                    try
+                    {
+                        if (!args[0].EndsWith(".mp3")) {
+                            MessageBox.Show("Only Mp3 is supported");
+                            return;
+                        }
+                        PlayerView spawnPlayer = new PlayerView(args[0]);
+                        Application.Run(spawnPlayer);
+                    }
+                    catch (Exception e) { MessageBox.Show(e.ToString()); }
                 }
             }
             else
