@@ -14,6 +14,7 @@ using NAudio.Wave;
 using System.IO;
 using System.Media;
 using System.Windows.Media.Imaging;
+using Music_Player.Runner.RPC;
 
 namespace Music_Player.Forms
 {
@@ -22,9 +23,11 @@ namespace Music_Player.Forms
         private Form mform;
         IWavePlayer waveOutDevice;
         bool isPlaying;
+        RpcClient rpc;
         public PlayerView(Form mainform) //the path to music ofcourse
         {
             InitializeComponent();
+            rpc = new RpcClient();
             waveOutDevice = new WaveOut();
             this.mform = mainform;
             this.FormClosed += onWindowClosed2;
@@ -32,6 +35,7 @@ namespace Music_Player.Forms
         public PlayerView(String arg)
         {
             InitializeComponent();
+            rpc = new RpcClient();
             waveOutDevice = new WaveOut();
             try
             {
@@ -75,6 +79,15 @@ namespace Music_Player.Forms
             waveOutDevice.Init(audioFileReader);
             waveOutDevice.Play();
             isPlaying = true;
+            rpc.SongName = file.Tag.Title != null ? file.Tag.Title : "Unnamed";
+            rpc.ArtistName = file.Tag.FirstAlbumArtist != null ? file.Tag.FirstAlbumArtist : "Unnamed";
+            rpc.isPlaying = true;
+            rpc.StartTime = DateTime.UtcNow;
+            try
+            {
+                rpc.setPresence();
+            }
+            catch{ }
         }
         private void onWindowClosed1(object sender, EventArgs e)
         {
@@ -95,10 +108,22 @@ namespace Music_Player.Forms
             {
                 waveOutDevice.Pause();
                 isPlaying = false;
+                try
+                {
+                    rpc.isPlaying = false;
+                    rpc.setPresence();
+                }
+                catch { }
             }else
             {
                 waveOutDevice.Play();
-                isPlaying = true;
+                rpc.isPlaying = true;
+                try
+                {
+                    isPlaying = true;
+                }
+                catch { }
+                rpc.setPresence();
             }
         }
     }

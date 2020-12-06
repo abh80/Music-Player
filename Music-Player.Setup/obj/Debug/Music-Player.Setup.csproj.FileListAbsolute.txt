@@ -7,3 +7,4 @@ C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\bin\Debug\Music-Play
 C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\bin\Debug\Music-Player.Setup.pdb
 C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.exe
 C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.pdb
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.csprojAssemblyReference.cache
