@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Music_Player.Forms;
-using Music_Player.Setup;
+using System.Diagnostics;
 using System.IO;
 
 namespace Music_Player
@@ -29,7 +29,8 @@ namespace Music_Player
             var ffmpegExists = File.Exists($@"{__path}/ffmpeg/ffmpeg-n4.3.1-26-gca55240b8c-win64-gpl-shared-4.3/bin/ffmpeg.exe");
             if (!ffmpegExists)
             {
-                Application.Run(new SetupManager());
+                Process.Start($@"{__path}/Music-Player.Setup.exe");
+                Application.Exit();
             }
             else if(args.Length > 0)
             {

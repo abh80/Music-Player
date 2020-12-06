@@ -1,0 +1,9 @@
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music_Player.Setup.Properties.Resources.resources
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music_Player.Forms.SetupManager.resources
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.csproj.GenerateResource.cache
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.csproj.CoreCompileInputs.cache
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\bin\Debug\Music-Player.Setup.exe.config
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\bin\Debug\Music-Player.Setup.exe
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\bin\Debug\Music-Player.Setup.pdb
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.exe
+C:\Users\suman\source\repos\Music-Player\Music-Player.Setup\obj\Debug\Music-Player.Setup.pdb

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music-Player", "Music-Playe
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Music Player", "Music Player\Music Player.vdproj", "{A57C40FB-1174-440F-B0E6-1E07B7CB03B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music-Player.Setup", "Music-Player.Setup\Music-Player.Setup.csproj", "{84EA33E5-F18D-467A-B9BB-829DE25B848F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{FA35E929-9258-4E65-994F-F44265CBE8DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A57C40FB-1174-440F-B0E6-1E07B7CB03B5}.Debug|Any CPU.ActiveCfg = Debug
 		{A57C40FB-1174-440F-B0E6-1E07B7CB03B5}.Release|Any CPU.ActiveCfg = Release
+		{84EA33E5-F18D-467A-B9BB-829DE25B848F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EA33E5-F18D-467A-B9BB-829DE25B848F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EA33E5-F18D-467A-B9BB-829DE25B848F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EA33E5-F18D-467A-B9BB-829DE25B848F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
